@@ -59,5 +59,28 @@ If you want to rebuild the models with your own data:
 1. Run the `helpers/build.sh` command
 
 ```bash
-$ bash helpers/build.sh  # this will take a few hours...
+$ bash helpers/build.sh  # this will take a few minutes...
+
+Using TensorFlow backend.
+Layer (type)                 Output Shape              Param #
+=================================================================
+embedding_1 (Embedding)      (None, 2083, 32)          2112
+_________________________________________________________________
+dropout_1 (Dropout)          (None, 2083, 32)          0
+_________________________________________________________________
+lstm_1 (LSTM)                (None, 16)                3136
+_________________________________________________________________
+dropout_2 (Dropout)          (None, 16)                0
+_________________________________________________________________
+dense_1 (Dense)              (None, 1)                 17
+=================================================================
+Total params: 5,265
+Trainable params: 5,265
+Non-trainable params: 0
+_________________________________________________________________
+None
+Train on 31593 samples, validate on 13540 samples
+Epoch 1/3
+  768/31593 [..............................] - ETA: 4:40 - loss: 0.6932 - acc: 0.4922
+
 ```
