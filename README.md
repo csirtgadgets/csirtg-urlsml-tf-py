@@ -23,7 +23,7 @@ from csirtg_urlsml_tf import predict, normalize_urls
 from pprint import pprint
 
 indicators = normalize_urls('https://g00gle.com/about-us')
-predictions = predict(i)
+predictions = predict(indicators)
 
 for idx, v in enumerate(indicators):
     print("%f - %s" % (predictions[idx], v))
