@@ -35,17 +35,17 @@ for idx, v in enumerate(indicators):
 $ pip install -r dev_requirements.txt
 $ python setup.py develop
 
-$ csirtg-urlsml-tf http://paypal-ate-my-lunch.com
+$ csirtg-urlsml-tf -i http://paypal-ate-my-lunch.com
 Using TensorFlow backend.
 0.045636 - http://paypal-ate-my-lunch.com
 
-$ csirtg-urlsml-tf 'http://paypal.com|https://google.com/about-us|https://g0ogle.com/about-us'
+$ csirtg-urlsml-tf -i 'http://paypal.com|https://google.com/about-us|https://g0ogle.com/about-us'
 Using TensorFlow backend.
 0.632489 - http://paypal.com
 0.038573 - https://google.com/about-us
 0.040402 - https://g0ogle.com/about-us
 
-$ csirtg-urlsml-tf 'http://hospitalregionalcoyhaique.cl/libraries/joomla/web/upgrade/verification/32216DN73N1C35BM7D9M/card.php'
+$ csirtg-urlsml-tf -i 'http://hospitalregionalcoyhaique.cl/libraries/joomla/web/upgrade/verification/32216DN73N1C35BM7D9M/card.php'
 Using TensorFlow backend.
 0.990057 - http://hospitalregionalcoyhaique.cl/libraries/joomla/web/upgrade/verification/32216DN73N1C35BM7D9M/card.php
 ```

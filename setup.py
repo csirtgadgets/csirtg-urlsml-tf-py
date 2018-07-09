@@ -25,8 +25,6 @@ if sys.argv[-1] == 'test':
 
 
 data_files = [
-    'data/whitelist.txt',
-    'data/blacklist.txt',
     'data/model.h5',
     'data/word-dict.json',
     'data/weights.h5'
