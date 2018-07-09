@@ -1,7 +1,6 @@
 sudo: required
 dist: trusty
 language: python
-
 cache:
   - pip
   - apt
@@ -11,7 +10,7 @@ python:
   - 3.6
 
 install:
-  - pip install -r dev_requirements.txt
+- pip install -r dev_requirements.txt
 
 script:
   - python setup.py test
@@ -26,7 +25,7 @@ deploy:
   provider: pypi
   user: wesyoung
   password:
-    secure: Yz1AR6EjSX8QLq1EFhQEBXmCXotGxtvztHrzGDZ40ohG+BgahChmKamWjQ3f38koVktu3+slO8ghyN/BLL1IVsZfag2KNSqjIMm7ckO0mF0S1XyOlMX1bHlP7vZMX2KG7fiJG/Fdwro8+1nLwpMgg4wfK7YSTipR5jfzgLZLJ5i0GAILmuQVzf6lrKRGFwBo3HW1cv/H54bSLUNMXXCqrJG7uVHTxrVinQ0Mpc/913az410KP8Q7Jy6tJO8Rb5wON3jarwASEHum9t7v9SgBwUGIMRag0egaM6zbQHdYGyw9gx60mlwUh4GsvIdp5cS+FAi0mclpYFSANcTl/jaaN0ToylN1WqSZQ1HMRUF5P6eGjyOJvRsICUFXS3jepsFZBlTsvRyfeUrB01AAQupi1z9Pberv+gGA1BtwBmOWXEN9zW5KcBSDb6UyHqJ1hANZjzfGW7GkDr6Q6Vi+GLHHlyOnkUgo+KOy0Rx1NUHiNlf9lUG8NZVwu9KFW8W+TUVHHx1JeQrlN7UNTIWWPIkg5J71CuK8pmunxMzDg6TK4KeLFcT9QQhhl+/5zawjBx21d7Q5NdQg39a0CW6Q7/7EMbi2naFDJ3o8obtQEL8zl1+S9YDkF9nrRKKrSYXhSFgffjLK9iDUexyIpgHY5uwRu6q3NAGDdHiKCo/2M9/EqOQ=
+    secure: tVjQdaQ1rjq238/6rrs6Ad30a6zQ3wR7QnkO5R+O17CHS2e9MiueKELPe19F99GtwTSo4vUHcGAkOn8MXDPmi8QL7XuOZhQ7FiURAZTjnybb3wirmOEeO8RQhmP9AANVDdrof62EMp7NdqKtx+v5zQyY/TV45LT7kSBJ5hj5D6Dit8QNCdjbRLFFprZrE+nzVnI0wEZuMA8+dcJkYXDJxvHIS79XuHkUB4nNvtsvrpIJ1a9cEPkQOBZFtzrWx7n/FHqAOAoY2UDhxiMwbjw9YR5y3VYV3X2HnEbdaP1fG55Js1XQiXwD/v0GgIDhZBjgL+/DI3U2gy/WmbNa6IubNmqpEkyj1Z7/3cAvQ7UNdoNbyieQ41ZYCpUuQjJYEcnLzerkH8O8uAgnCap1xcLKyTsOwrZiaXsn1HvA5RFAZppK1XecvQkyzcqEimFmz8wiZUvIt0cZQHZkj240iokPm+4umOcJz83yUDVtKtc9tD0Fqd7Lv/KJpnk1nfMsqV5LnLzmdEfKhT1Zulg21PE+kVboqCxbzv2euFwK09u7xiJ/kPzOl14O7lbeTgG32FPPcjL/jn9x9uDZIc6GGWgXdQrN412PMQR96USMtHOQZjpxjvBexm/kQtD9eNFEYJmyxLc/TMsZkMKZpsWbAC2BAcxtqbvQpZBRtPSqZ5xSBrU=
   on:
     branch: master
     tags: true
