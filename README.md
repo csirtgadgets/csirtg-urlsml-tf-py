@@ -13,12 +13,11 @@ https://csirtgadgets.com/commits/2018/3/30/hunting-for-threats-like-a-quant
 # Getting Started
 
 ## Incorporating into a Project
-1. Install library
-```
+
+```bash
 $ pip install csirtg_urlsml_tf
 ```
 
-1. Call the function
 ```python
 from csirtg_urlsml_tf import predict, normalize_urls
 from pprint import pprint
