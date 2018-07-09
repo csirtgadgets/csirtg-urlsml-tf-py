@@ -11,6 +11,27 @@ https://csirtgadgets.com/commits/2018/3/8/hunting-for-suspicious-domains-using-p
 https://csirtgadgets.com/commits/2018/3/30/hunting-for-threats-like-a-quant
 
 # Getting Started
+
+## Incorporating into a Project
+1. Install library
+```
+$ pip install csirtg_urlsml_tf
+```
+
+1. Call the function
+```python
+from csirtg_urlsml_tf import predict, normalize_urls
+from pprint import pprint
+
+indicators = normalize_urls('https://g00gle.com/about-us')
+predictions = predict(i)
+
+for idx, v in enumerate(indicators):
+    print("%f - %s" % (predictions[idx], v))
+```
+
+
+## Development and Building
 ```bash
 $ pip install -r dev_requirements.txt
 $ python setup.py develop
@@ -34,10 +55,10 @@ Using TensorFlow backend.
 
 If you want to rebuild the models with your own data:
 
-1. Update data/whitelist.txt
-1. Update data/blacklist.txt
+1. Update `data/whitelist.txt`
+1. Update `data/blacklist.txt`
 1. Run the `helpers/build.sh` command
 
 ```bash
-$ bash helpers/build.sh  # this will take a hours...
+$ bash helpers/build.sh  # this will take a few hours...
 ```

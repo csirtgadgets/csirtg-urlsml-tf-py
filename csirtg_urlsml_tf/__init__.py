@@ -22,6 +22,13 @@ from pprint import pprint
 from csirtg_urlsml_tf.constants import MODEL, WEIGHTS, MAX_STRING_LEN, WORD_DICT
 
 
+def normalize_urls(indicators):
+    if not isinstance(indicators, list):
+        indicators = [indicators]
+
+    return [urlparse(i.lower()).geturl() for i in indicators]
+
+
 def predict(i):
     tokenizer = Tokenizer(filters='\t\n', char_level=True, lower=True)
     word_dict_file = os.path.join(WORD_DICT)
@@ -64,7 +71,8 @@ def main():
 
     indicators = args.indicators.split('|')
 
-    indicators = [urlparse(i.lower()).geturl() for i in indicators]
+    # indicators = [urlparse(i.lower()).geturl() for i in indicators]
+    indicators = normalize_urls(indicators)
 
     predictions = predict(indicators)
 
