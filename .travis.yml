@@ -2,30 +2,25 @@ sudo: required
 dist: trusty
 language: python
 cache:
-  - pip
-  - apt
-
+- pip
+- apt
 python:
-  - 2.7
-  - 3.6
-
+- 2.7
+- 3.6
 install:
 - pip install -r dev_requirements.txt
-
 script:
-  - python setup.py test
-  - python setup.py sdist bdist bdist_wheel
-
+- python setup.py test
+- python setup.py sdist bdist bdist_wheel
 notifications:
   email:
     on_success: never
     on_failure: never
-
 deploy:
   provider: pypi
   user: wesyoung
   password:
-    secure: tVjQdaQ1rjq238/6rrs6Ad30a6zQ3wR7QnkO5R+O17CHS2e9MiueKELPe19F99GtwTSo4vUHcGAkOn8MXDPmi8QL7XuOZhQ7FiURAZTjnybb3wirmOEeO8RQhmP9AANVDdrof62EMp7NdqKtx+v5zQyY/TV45LT7kSBJ5hj5D6Dit8QNCdjbRLFFprZrE+nzVnI0wEZuMA8+dcJkYXDJxvHIS79XuHkUB4nNvtsvrpIJ1a9cEPkQOBZFtzrWx7n/FHqAOAoY2UDhxiMwbjw9YR5y3VYV3X2HnEbdaP1fG55Js1XQiXwD/v0GgIDhZBjgL+/DI3U2gy/WmbNa6IubNmqpEkyj1Z7/3cAvQ7UNdoNbyieQ41ZYCpUuQjJYEcnLzerkH8O8uAgnCap1xcLKyTsOwrZiaXsn1HvA5RFAZppK1XecvQkyzcqEimFmz8wiZUvIt0cZQHZkj240iokPm+4umOcJz83yUDVtKtc9tD0Fqd7Lv/KJpnk1nfMsqV5LnLzmdEfKhT1Zulg21PE+kVboqCxbzv2euFwK09u7xiJ/kPzOl14O7lbeTgG32FPPcjL/jn9x9uDZIc6GGWgXdQrN412PMQR96USMtHOQZjpxjvBexm/kQtD9eNFEYJmyxLc/TMsZkMKZpsWbAC2BAcxtqbvQpZBRtPSqZ5xSBrU=
+    secure: lh85XhX1gB9V3BIvx4Fco5ESNZwXgn0nQwPqVZxMiHEl43O5NCF2Aaq13OQBui5CpCrI8yK3DpAUV3C9YdWnpvkHefIf8+9pgHt0574tjH8n+lfHWCAhHobMmdqZ05sZ+GNt8x/9CQFkguHvR8HQ6hLL0Ag3Qo0G2FFr9Opt8SXsd6pBsRZYp5E/18uZb+51ScKoPff8XsPJ6ybzH7ls1wfxVh9nSTwB+/AgCuaXYd8kiJcvOy7ZZUEYw8EYo9yWOO1i4fbdaanzXB9pzUEw9XyisshFm6Ag8/Vhlzc8DxMOG7z6ZRj3xJHcU3qAT+6/6IdEGy5LsTT5a3KDOl2CvOdzES6wiSwKsK0JBWkxUwwMC0VYDTGLz50G+qOfeqQhPPnsb5S/aBIIKZMUe43L7riZazU0zgEy5mgNDQuTttlikFczd4169pYh15OZpHWCNbzEbuEsiOZ5ps7McFdIgA0EAqg4YhCNQp6BEP6POJu/oXtbns0KLTMEKVBnWgF6o70JGSXKUwlvY1MHMKnooLYTfb3/levhYdPFdUC8SWPme9KnWvjQJke7TNfwluBn9QsxeiWtQdTuU5ZXjDfK7dp20n/2Y8+3CJwEp6tDLnjOGRox+DEuw1HlbE3rOEHPufGCFMX8zVsvVmBooLgqSJ0w4NvVgdeoDPUSUxPSJwI=
   on:
     branch: master
     tags: true
