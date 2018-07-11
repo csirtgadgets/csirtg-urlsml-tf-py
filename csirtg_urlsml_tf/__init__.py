@@ -12,8 +12,12 @@ try:
 except ImportError:
     from urlparse import urlparse
 
+import sys, gc
+import select
 from argparse import ArgumentParser, RawDescriptionHelpFormatter
 import textwrap
+
+from keras import backend as K
 from keras.models import Sequential, load_model
 from keras.preprocessing import sequence
 from keras.preprocessing.text import Tokenizer
@@ -47,8 +51,12 @@ def predict(i):
 
     model = load_model(MODEL)
     model.load_weights(WEIGHTS)
+    p = model.predict(log_entry_processed)
 
-    return model.predict(log_entry_processed)
+    K.clear_session()
+    gc.collect()
+
+    return p
 
 
 def main():
@@ -69,7 +77,11 @@ def main():
 
     args = p.parse_args()
 
-    indicators = args.indicators.split('|')
+    if not sys.stdin.isatty():
+        indicators = sys.stdin.read().split("\n")
+        indicators = indicators[:-1]
+    else:
+        indicators = args.indicators.split('|')
 
     # indicators = [urlparse(i.lower()).geturl() for i in indicators]
     indicators = normalize_urls(indicators)
