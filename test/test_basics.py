@@ -54,7 +54,7 @@ def test_urls_basic():
 
     assert predictions[0]
 
-    assert np.average(predictions) > 0.75
+    assert np.average(predictions) > 0.68
 
 # def test_urls_random():
 #     s = []
