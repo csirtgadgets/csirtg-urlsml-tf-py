@@ -1,5 +1,5 @@
 Faker>=0.7,<1.0
-pytest
-coverage
-pytest-cov
+coverage>=4.5
+pytest>=4.2
+pytest-cov>=2.6
 -r requirements.txt
