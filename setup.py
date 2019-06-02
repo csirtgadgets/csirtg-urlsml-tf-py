@@ -37,7 +37,6 @@ setup(
     description="CSIRTG URLs ML Framework - TensorFlow",
     long_description="",
     url="https://github.com/csirtgadgets/csirtg-urlsml-tf-py",
-    license='MPLv2',
     data_files=[(os.path.join('csirtg_urlsml_tf', 'data'), data_files)],
     keywords=['network', 'security'],
     author="Wes Young",
@@ -54,4 +53,7 @@ setup(
            'csirtg-urlsml-tf=csirtg_urlsml_tf:main'
        ]
     },
+    classifiers=[
+        'License :: OSI Approved :: Mozilla Public License 2.0 (MPL 2.0)',
+    ],
 )
